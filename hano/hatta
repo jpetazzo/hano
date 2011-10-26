@@ -1,0 +1,11 @@
+#!/bin/bash
+cat >~/hatta.conf <<EOF
+[hatta]
+pages_path=/home/dotcloud/data/repo
+subdirectories=True
+cache_path=/tmp/hatta/cache
+hgweb=True
+port=$PORT_EDITOR
+EOF
+exec python -m hatta
+

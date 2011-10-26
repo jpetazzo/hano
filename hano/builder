@@ -1,0 +1,34 @@
+#!/bin/bash
+# We are using this instead of requirements.txt because Hatta forgets to
+# mention werkzeug in its setup_requires. Also, we install a fake pybonjour
+# since Hatta tries to use it at setup time. Which makes sense on a desktop,
+# but not on a server.
+cd hano
+if [ -d ~/virtualenv ]
+then
+	echo 'Python environment already installed.'
+else
+	echo 'Installing Python environment...'
+	virtualenv ~/virtualenv
+	. ~/virtualenv/bin/activate
+	echo . ~/virtualenv/bin/activate > ~/profile
+	pip install Sphinx
+	# Work around bug in file: urls in pip
+	pip install file:../hano/fakepybonjour#egg=pybonjour
+	pip install werkzeug
+	pip install hg+http://hg.hatta-wiki.org/hatta#egg=Hatta
+	echo 'Setting up repository in ~/data/repo...'
+	mkdir -p ~/data/repo
+	[ -d ~/data/repo/.hg ] || {
+		hg init ~/data/repo/.hg
+		cp hgrc ~/data/repo/.hg/hgrc
+		for F in server.js package.json Home
+		do
+			cp $F ~/data/repo
+			hg -R ~/data/repo add ~/data/repo/$F
+		done
+		hg -R ~/data/repo commit -m 'hello world app'
+	}
+fi
+echo 'Setting up dotCloud scaffolding...'
+cp rebuild hatta run log streamlogs ~

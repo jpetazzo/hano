@@ -1,0 +1,11 @@
+www:
+  type: custom
+  buildscript: hano/builder
+  ports:
+    www: http
+    editor: tcp
+    log: tcp
+  processes:
+    node: ~/run
+    hatta: ~/hatta
+    log: ~/log

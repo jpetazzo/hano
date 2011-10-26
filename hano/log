@@ -1,0 +1,2 @@
+#!/bin/bash
+exec socat TCP-LISTEN:$PORT_LOG,reuseaddr,fork EXEC:$HOME/streamlogs

@@ -1,0 +1,6 @@
+#!/bin/bash
+mkdir -p ~/node_modules
+cd ~/data/repo
+[ -d node_modules ] || ln -s ~/node_modules
+[ -f package.json ] && npm install
+exec node server.js

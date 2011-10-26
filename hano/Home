@@ -1,0 +1,25 @@
+Welcome to Hano, your [[http://no.de/|Node.js]] IDE
+running on [[http://www.dotcloud.com/|dotCloud]]!
+
+Get started by editing the hello world in [[server.js]].
+
+If you need to install NPM dependencies, edit the [[package.json]] file.
+
+Each time you save:
+
+* your changes are saved as a commit in a Mercurial repository,
+* the NPM dependencies taken from [[package.json]] are updated,
+* the node process is restarted.
+
+Check your logs! Run {{{dotcloud info hano.www}}} (if you deployed
+this app with the name {{{hano}}}) and lookup the port in the {{{log}}}
+section. Point your browser to this host+port, and see streaming logs!
+You can also stream them live in a console if you use {{{curl}}} instead.
+
+Enjoy!
+
+PS: **Hano** stands for **Ha**tta+**No**de. [[http://hatta-wiki.org/|Hatta]]
+is an awesome wiki engine, that uses Mercurial as its storage backend.
+Hatta is written in Python, but since dotCloud is a 
+[[http://docs.dotcloud.com/services/|polyglot platform]], it can run
+both Node and Python at the same time without a hitch.
