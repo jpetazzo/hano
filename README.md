@@ -39,4 +39,8 @@ the logs of your service.
 
 All the changes made through the editor are versioned in
 a Mercurial repository. You can clone/push/pull this repository
-by hacking around the SSH entrypoint.
+by hacking around the SSH entrypoint:
+
+    hg clone ssh://dotcloud@hano-yourusername.dotcloud.com:12345/data/repo
+
+Enjoy!
