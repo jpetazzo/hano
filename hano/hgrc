@@ -1,3 +1,4 @@
 [hooks]
-commit.rebuild = /home/dotcloud/rebuild
+commit.hano = /home/dotcloud/hook-commit
+changegroup.hano = /home/dotcloud/hook-changegroup
 

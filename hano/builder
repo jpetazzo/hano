@@ -31,4 +31,4 @@ else
 	}
 fi
 echo 'Setting up dotCloud scaffolding...'
-cp rebuild hatta run log streamlogs ~
+cp hook-commit hook-changegroup hatta run log streamlogs ~

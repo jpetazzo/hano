@@ -1,0 +1,3 @@
+#!/bin/sh
+hg update
+supervisorctl restart node
